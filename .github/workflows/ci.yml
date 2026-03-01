@@ -1,0 +1,15 @@
+name: CI  # Name your workflow for the badge
+
+on:
+  push:  # Runs on code pushes
+    branches: [ main ]  # Or your default branch
+  workflow_dispatch:  # Allows manual trigger (key for testing)[web:1]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Free GitHub server
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run a test
+        run: echo "Workflow passed!"  # Simple step that succeeds
